@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 // Base class for Employees
 class Employee: Entrant {
     var firstName: String?
@@ -15,39 +16,45 @@ class Employee: Entrant {
     var city: String?
     var state: String?
     var zipCode: String?
+    var entrantType: EntrantType
     var areaAccess: [AreaAccess] = []
-    var rideAccess: [RideAccess] = []
+    var rideAccess: [RideAccess] = [.accessAllRides]
+    var dateOfBirth: Date?
     var discountOnFood: Int? = 15
     var discountOnMerchandise: Int? = 25
-    var entrantType: EntrantType
-    var dateOfBirth: Date?
+    var projectNumber: Int?
+    var vendorCompany: VendorCompany?
+    var dateOfVisit: Date?
     
-    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType, dateOfBirth: Date?) throws {
+    
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType, dateOfBirth: Date?, projectNumber: Int? = nil) throws {
         
-        guard let firstNameUnwrapped = firstName else {
+        guard let firstNameUnwrapped = firstName.nilIfEmpty else {
             throw InitializerError.missingFirstName
         }
         
-        guard let lastNameUnwrapped = lastName else {
+        guard let lastNameUnwrapped = lastName.nilIfEmpty else {
             throw InitializerError.missingLastName
         }
         
-        guard let streetAddressUnwrapped = streetAddress else {
+        guard let streetAddressUnwrapped = streetAddress.nilIfEmpty else {
             throw InitializerError.missingStreetAddress
         }
         
-        guard let cityUnwrapped = city else {
+        guard let cityUnwrapped = city.nilIfEmpty else {
             throw InitializerError.missingCity
         }
         
-        guard let stateUnwrapped = state else {
+        guard let stateUnwrapped = state.nilIfEmpty else {
             throw InitializerError.missingState
         }
         
-        guard let zipCodeUnwrapped = zipCode else {
+        guard let zipCodeUnwrapped = zipCode.nilIfEmpty else {
             throw InitializerError.missingZipCode
         }
         
+        // DateOfBirth is not mandatory for employees, so
+        // we don't halt the program execution if date is missing
         if let dateOfBirthUnwrapped = dateOfBirth {
             self.dateOfBirth = dateOfBirthUnwrapped
         }
@@ -59,28 +66,29 @@ class Employee: Entrant {
         self.state = stateUnwrapped
         self.zipCode = zipCodeUnwrapped
         self.entrantType = entrantType
+        self.projectNumber = projectNumber
     }
 }
 
 
-class FoodSerEmp: Employee {
-    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .FoodSerEmp, dateOfBirth: Date?) throws {
-         try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth)
+class FoodServiceEmployee: Employee {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .FoodSerEmp, dateOfBirth: Date?) throws {
+        try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth)
         self.areaAccess = [.amusementAreas, .kitchenArea]
     }
 }
 
 
-class RideSerEmp: Employee {
-    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .RideSerEmp, dateOfBirth: Date?) throws {
+class RideServiceEmployee : Employee {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .RideSerEmp, dateOfBirth: Date?) throws {
         try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth)
         self.areaAccess = [.amusementAreas, .rideControlAreas]
     }
 }
 
 
-class MaintenanceEmp: Employee {
-    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .MaintenanceEmp , dateOfBirth: Date?) throws {
+class MaintenanceEmployee: Employee {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .MaintenanceEmp , dateOfBirth: Date?) throws {
         try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth)
         self.areaAccess = [.amusementAreas, .kitchenArea, .rideControlAreas, .maintenanceAreas]
     }
@@ -88,12 +96,41 @@ class MaintenanceEmp: Employee {
 
 
 class Manager: Employee {
-    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .Manager , dateOfBirth: Date?) throws {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .Manager , dateOfBirth: Date?) throws {
         try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth)
         self.areaAccess = [.amusementAreas, .kitchenArea, .rideControlAreas, .maintenanceAreas, .officeAreas]
         self.discountOnFood = 25
         self.discountOnMerchandise = 25
     }
 }
+
+
+class ContractEmployee: Employee {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, entrantType: EntrantType = .ContractEmp, projectNumber: Int?, dateOfBirth: Date?) throws {
+        try super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, entrantType: entrantType, dateOfBirth: dateOfBirth, projectNumber: projectNumber)
+        self.rideAccess = []
+        
+        guard let projectNumberUnwrapped = projectNumber else {
+            throw InitializerError.missingProjectNumber
+        }
+        
+        switch projectNumberUnwrapped {
+        case 1001:
+            self.areaAccess = [.amusementAreas, .rideControlAreas]
+        case 1002:
+            self.areaAccess = [.amusementAreas, .rideControlAreas, .maintenanceAreas]
+        case 1003:
+            self.areaAccess = [.amusementAreas, .rideControlAreas, .kitchenArea, .maintenanceAreas, .officeAreas]
+        case 2001:
+            self.areaAccess = [.officeAreas]
+        case 2002:
+            self.areaAccess = [.kitchenArea, .maintenanceAreas]
+        default:
+            throw InitializerError.invalidProjectNumber
+        }
+    }
+    
+}
+
 
 

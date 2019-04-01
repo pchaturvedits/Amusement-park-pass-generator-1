@@ -14,6 +14,13 @@
 		3A8AADD31DF9B85E00A2B931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */; };
 		3A8AADDE1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADDD1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift */; };
 		3A8AADE91DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */; };
+		C800DF362235D5E900A982F0 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C800DF352235D5E900A982F0 /* PageViewController.swift */; };
+		C800DF382235EB3000A982F0 /* AudioFiles in Resources */ = {isa = PBXBuildFile; fileRef = C800DF372235EB3000A982F0 /* AudioFiles */; };
+		C800DF3D2235ED9700A982F0 /* AccessGranted.wav in Resources */ = {isa = PBXBuildFile; fileRef = C800DF3B2235ED9700A982F0 /* AccessGranted.wav */; };
+		C800DF3E2235ED9700A982F0 /* AccessDenied.wav in Resources */ = {isa = PBXBuildFile; fileRef = C800DF3C2235ED9700A982F0 /* AccessDenied.wav */; };
+		C8E0427D2234C485004910A0 /* FaceImageAsset.png in Resources */ = {isa = PBXBuildFile; fileRef = C8E0427C2234C485004910A0 /* FaceImageAsset.png */; };
+		C8E0427F2234D94A004910A0 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0427E2234D94A004910A0 /* Vendor.swift */; };
+		C8E042812234DA70004910A0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E042802234DA70004910A0 /* Extension.swift */; };
 		C8FC044222191C6F00E451A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC044122191C6F00E451A1 /* Model.swift */; };
 		C8FC04442224EC3400E451A1 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC04432224EC3400E451A1 /* Guest.swift */; };
 		C8FC04462224EC6000E451A1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC04452224EC6000E451A1 /* Employee.swift */; };
@@ -52,6 +59,13 @@
 		3A8AADE41DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewAppSwiftTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewAppSwiftTemplateUITests.swift; sourceTree = "<group>"; };
 		3A8AADEA1DF9B85E00A2B931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C800DF352235D5E900A982F0 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		C800DF372235EB3000A982F0 /* AudioFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioFiles; path = Assets.xcassets/AudioFiles; sourceTree = "<group>"; };
+		C800DF3B2235ED9700A982F0 /* AccessGranted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AccessGranted.wav; path = SingleViewAppSwiftTemplate/AccessGranted.wav; sourceTree = "<group>"; };
+		C800DF3C2235ED9700A982F0 /* AccessDenied.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AccessDenied.wav; path = SingleViewAppSwiftTemplate/AccessDenied.wav; sourceTree = "<group>"; };
+		C8E0427C2234C485004910A0 /* FaceImageAsset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaceImageAsset.png; path = Assets.xcassets/FaceImageAsset.png; sourceTree = "<group>"; };
+		C8E0427E2234D94A004910A0 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		C8E042802234DA70004910A0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C8FC044122191C6F00E451A1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C8FC04432224EC3400E451A1 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		C8FC04452224EC6000E451A1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -87,6 +101,8 @@
 		3A8AADBC1DF9B85E00A2B931 = {
 			isa = PBXGroup;
 			children = (
+				C800DF3C2235ED9700A982F0 /* AccessDenied.wav */,
+				C800DF3B2235ED9700A982F0 /* AccessGranted.wav */,
 				3A8AADC71DF9B85E00A2B931 /* SingleViewAppSwiftTemplate */,
 				3A8AADDC1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests */,
 				3A8AADE71DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests */,
@@ -113,11 +129,16 @@
 				C8FC044122191C6F00E451A1 /* Model.swift */,
 				C8FC04432224EC3400E451A1 /* Guest.swift */,
 				C8FC04452224EC6000E451A1 /* Employee.swift */,
+				C8E0427E2234D94A004910A0 /* Vendor.swift */,
 				C8FC0447222C5B4800E451A1 /* testcase.swift */,
 				C8FC0449222C5B6C00E451A1 /* check point.swift */,
+				C8E042802234DA70004910A0 /* Extension.swift */,
 				3A8AADCF1DF9B85E00A2B931 /* Assets.xcassets */,
+				C800DF372235EB3000A982F0 /* AudioFiles */,
+				C8E0427C2234C485004910A0 /* FaceImageAsset.png */,
 				3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */,
 				3A8AADD41DF9B85E00A2B931 /* Info.plist */,
+				C800DF352235D5E900A982F0 /* PageViewController.swift */,
 			);
 			path = SingleViewAppSwiftTemplate;
 			sourceTree = "<group>";
@@ -248,8 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8AADD31DF9B85E00A2B931 /* LaunchScreen.storyboard in Resources */,
+				C800DF382235EB3000A982F0 /* AudioFiles in Resources */,
+				C800DF3D2235ED9700A982F0 /* AccessGranted.wav in Resources */,
 				3A8AADD01DF9B85E00A2B931 /* Assets.xcassets in Resources */,
 				3A8AADCE1DF9B85E00A2B931 /* Main.storyboard in Resources */,
+				C8E0427D2234C485004910A0 /* FaceImageAsset.png in Resources */,
+				C800DF3E2235ED9700A982F0 /* AccessDenied.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E042812234DA70004910A0 /* Extension.swift in Sources */,
+				C800DF362235D5E900A982F0 /* PageViewController.swift in Sources */,
 				C8FC044A222C5B6C00E451A1 /* check point.swift in Sources */,
 				3A8AADCB1DF9B85E00A2B931 /* ViewController.swift in Sources */,
 				C8FC044222191C6F00E451A1 /* Model.swift in Sources */,
 				C8FC04442224EC3400E451A1 /* Guest.swift in Sources */,
 				C8FC0448222C5B4800E451A1 /* testcase.swift in Sources */,
+				C8E0427F2234D94A004910A0 /* Vendor.swift in Sources */,
 				C8FC04462224EC6000E451A1 /* Employee.swift in Sources */,
 				3A8AADC91DF9B85E00A2B931 /* AppDelegate.swift in Sources */,
 			);
@@ -435,6 +463,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.SingleViewAppSwiftTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -447,6 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.SingleViewAppSwiftTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
