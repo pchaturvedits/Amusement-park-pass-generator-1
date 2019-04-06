@@ -15,7 +15,6 @@
 		3A8AADDE1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADDD1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift */; };
 		3A8AADE91DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */; };
 		C800DF362235D5E900A982F0 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C800DF352235D5E900A982F0 /* PageViewController.swift */; };
-		C800DF382235EB3000A982F0 /* AudioFiles in Resources */ = {isa = PBXBuildFile; fileRef = C800DF372235EB3000A982F0 /* AudioFiles */; };
 		C800DF3D2235ED9700A982F0 /* AccessGranted.wav in Resources */ = {isa = PBXBuildFile; fileRef = C800DF3B2235ED9700A982F0 /* AccessGranted.wav */; };
 		C800DF3E2235ED9700A982F0 /* AccessDenied.wav in Resources */ = {isa = PBXBuildFile; fileRef = C800DF3C2235ED9700A982F0 /* AccessDenied.wav */; };
 		C8E0427D2234C485004910A0 /* FaceImageAsset.png in Resources */ = {isa = PBXBuildFile; fileRef = C8E0427C2234C485004910A0 /* FaceImageAsset.png */; };
@@ -60,7 +59,6 @@
 		3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewAppSwiftTemplateUITests.swift; sourceTree = "<group>"; };
 		3A8AADEA1DF9B85E00A2B931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C800DF352235D5E900A982F0 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C800DF372235EB3000A982F0 /* AudioFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioFiles; path = Assets.xcassets/AudioFiles; sourceTree = "<group>"; };
 		C800DF3B2235ED9700A982F0 /* AccessGranted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AccessGranted.wav; path = SingleViewAppSwiftTemplate/AccessGranted.wav; sourceTree = "<group>"; };
 		C800DF3C2235ED9700A982F0 /* AccessDenied.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AccessDenied.wav; path = SingleViewAppSwiftTemplate/AccessDenied.wav; sourceTree = "<group>"; };
 		C8E0427C2234C485004910A0 /* FaceImageAsset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaceImageAsset.png; path = Assets.xcassets/FaceImageAsset.png; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				C8FC0449222C5B6C00E451A1 /* check point.swift */,
 				C8E042802234DA70004910A0 /* Extension.swift */,
 				3A8AADCF1DF9B85E00A2B931 /* Assets.xcassets */,
-				C800DF372235EB3000A982F0 /* AudioFiles */,
 				C8E0427C2234C485004910A0 /* FaceImageAsset.png */,
 				3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */,
 				3A8AADD41DF9B85E00A2B931 /* Info.plist */,
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8AADD31DF9B85E00A2B931 /* LaunchScreen.storyboard in Resources */,
-				C800DF382235EB3000A982F0 /* AudioFiles in Resources */,
 				C800DF3D2235ED9700A982F0 /* AccessGranted.wav in Resources */,
 				3A8AADD01DF9B85E00A2B931 /* Assets.xcassets in Resources */,
 				3A8AADCE1DF9B85E00A2B931 /* Main.storyboard in Resources */,
